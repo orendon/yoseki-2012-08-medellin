@@ -1,5 +1,5 @@
 class Fixnum
   def in_roman
-    "I"
+    "I"*self
   end
 end
