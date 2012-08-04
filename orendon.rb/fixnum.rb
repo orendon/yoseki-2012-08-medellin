@@ -1,11 +1,16 @@
 class Fixnum
   @@roman_numerals = {
-    1 => "I",   2 => "II",    3 => "III",   4 => "IV",
-    5 => "V",   6 => "VI",    7 => "VII",   8 => "VIII",
-    9 => "IX",  10=> "X"
-  }
+    1000 => "M",  500 => "D",   100 => "C",
+    50 => "L",    10  => "X",   5 => "V",   1 => "I"
+}
 
   def in_roman
-   @@roman_numerals[self]
-  end
+    return "" if self == 0
+
+    bigger_number = @@roman_numerals.keys.detect { |k| self >= k }
+    roman_equivalent = @@roman_numerals[bigger_number]
+
+    next_number = (self - bigger_number)
+    roman_equivalent + next_number.in_roman
+    end
 end
