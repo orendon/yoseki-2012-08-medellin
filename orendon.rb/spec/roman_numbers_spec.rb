@@ -27,4 +27,12 @@ describe "arabic to roman conversions" do
     11.in_roman.should be == "XI"
   end
 
+  it "should convert 15 in XV" do
+    15.in_roman.should be == "XV"
+  end
+
+  it "should convert 33 in XXXIII" do
+    33.in_roman.should be == "XXXIII"
+  end
+
 end
